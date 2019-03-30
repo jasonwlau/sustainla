@@ -23,15 +23,51 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Recycling Challenge</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"> </div>
-      <div class = "bin">
-        <div class = "bin-item bin-one"> </div>
-        <div class = "bin-item bin-two"> </div>
-        <div class = "bin-item bin-three"> </div>
-        </div> 
+    <h1 style="text-align: center; color: darkorange">
+   Hello sustainLA!
+  </h1>
+  <h1 style="text-align: center; color: green">
+    How well do you think you know how to Recycle?
+  </h1>
+  <h1 style="text-align: center; color: green">
+    Try to drag the waste items into the correct bin 
+  </h1>
+    <div style="text-align: center; color: rgba(255, 140, 0, 0.801)" id="item1"></div>
+    <div style="text-align: center; color: rgba(255, 140, 0, 0.801)" id="item2"></div>
+    <div style="text-align: center; color: rgba(255, 140, 0, 0.801)" id="item3"></div>
+
+  <div class='bin'>
+    <div id='testbin' class='bin-item bin-one'>
+      <h3 style="text-align: center; color: darkblue">Recycling</h3><img src='images/recyclingbin.jpg' />
+      <div id='bin1'>
+      </div>
+    </div>
+    <div class='bin-item bin-two'>
+      <h3 style="text-align: center; color: darkgreen">Compost</h3><img src='images/compostbin.jpg' />
+      <div id='bin2'>
+      </div>
+    </div>
+    <div class='bin-item bin-three'>
+      <h3 style="text-align: center">Landfill</h3><img src='images/landfillbin.jpg' />
+      <div id='bin3'></div>
+    </div>
+  </div>
+  <button onClick="changeBinColor('testbin')">change bin border color</button>
+  <script>
+    function changeBinColor(binID) {
+      if (document.getElementById(binID).style.borderColor == 'white') {
+          document.getElementById(binID).style.borderColor = 'green';
+      }
+      else if (document.getElementById(binID).style.borderColor == 'red') {
+        document.getElementById(binID).style.borderColor = 'green';
+      } else {
+        document.getElementById(binID).style.borderColor = 'red';
+      }
+    }
+  </script>
   </body>
 </html>
